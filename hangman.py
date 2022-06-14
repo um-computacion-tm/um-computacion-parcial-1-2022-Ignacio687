@@ -28,3 +28,11 @@ class Hangman():
 
     def winner(self):
         return False if '_ ' in self.displeyWord else True
+
+    def play(self):
+        while self.lifes > 0 and not self.winner():
+            try:
+                self.assign(input('What letter would you like to try?  '))
+            except InvalidAssignmentException:
+                continue
+        return 'Ganaste' if self.lifes != 0 else 'Perdiste'
