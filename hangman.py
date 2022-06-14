@@ -24,3 +24,6 @@ class Hangman():
         else: 
             self.lifes -=1
             raise InvalidAssignmentException
+
+    def winner(self):
+        return False if '_ ' in self.displeyWord else True
