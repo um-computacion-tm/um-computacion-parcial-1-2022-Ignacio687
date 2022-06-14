@@ -1,3 +1,4 @@
+from invalidassignmentexception import InvalidAssignmentException
 
 class Hangman():
     def __init__(self):
@@ -13,4 +14,12 @@ class Hangman():
         displeyWordString = ''.join(self.displeyWord)
         return f'Lifes: {self.lifes} - Word: {displeyWordString}'
 
-    
+    def assign(self, letter):
+        if letter in self.word:
+            indexStart = -1
+            for letterCounter in self.word:
+                indexStart +=1
+                if letter == letterCounter:
+                    self.displeyWord[self.word.index(letter, indexStart)] = letter+' '
+        else: raise InvalidAssignmentException
+
