@@ -31,6 +31,7 @@ class Hangman():
 
     def play(self):
         while self.lifes > 0 and not self.winner():
+            print(self.show())
             try:
                 self.assign(input('What letter would you like to try?  '))
             except InvalidAssignmentException:
