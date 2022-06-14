@@ -7,7 +7,7 @@ class Hangman():
         self.displeyWord = []
 
     def set_word(self, word):
-        self.word = [letter for letter in word]
+        self.word = [letter for letter in word.lower()]
         self.displeyWord = ['_ ' for letter in self.word]
 
     def show(self):
@@ -15,6 +15,7 @@ class Hangman():
         return f'Lifes: {self.lifes} - Word: {displeyWordString}'
 
     def assign(self, letter):
+        letter = letter.lower()
         if letter in self.word:
             indexStart = -1
             for letterCounter in self.word:
