@@ -21,4 +21,6 @@ class Hangman():
                 indexStart +=1
                 if letter == letterCounter:
                     self.displeyWord[self.word.index(letter, indexStart)] = letter+' '
-        else: raise InvalidAssignmentException
+        else: 
+            self.lifes -=1
+            raise InvalidAssignmentException
